@@ -1,8 +1,7 @@
 package BasicJava;
 
-public class Exe_001 {
-
+public class Exe_002 {
     public static void main(String[] args) {
-        System.out.println("Hello java");
+        System.out.println("Hiii");
     }
 }
