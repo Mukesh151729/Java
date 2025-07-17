@@ -3,10 +3,10 @@ package BasicJava;
 public class Exe_023_PalindromeSeries {
     public static void main(String[] args) {
 
-        String name="rmadam";
+        String name="Mukesh Vijay Dhagge";
         System.out.println(name.length());
         String reverse=reverseNum(name);
-
+        System.out.println(reverse);
         if (name.equalsIgnoreCase(reverse))
         {
             System.out.println(name+" is palindrom");
