@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Exe056_Map {
+public class Exe_056_Map {
 
     private static Map<Integer,MyStudent> myStudentMap=new HashMap<>();
     public static void main(String[] args) {
