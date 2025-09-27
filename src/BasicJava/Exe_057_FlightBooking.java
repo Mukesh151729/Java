@@ -26,6 +26,7 @@ public class Exe_057_FlightBooking {
 
             System.out.println("1. Please Book your Ticket");
             System.out.println("2. Please view Detils");
+            System.out.println("3. Please Pay Bill..");
             System.out.println("Please Enter Your Choice");
             ch=sc.nextInt();
             sc.nextLine();
@@ -40,10 +41,17 @@ public class Exe_057_FlightBooking {
                     viewDetails();
                     break;
 
+                case 3:
+                    TicketBilling();
+                    break;
+
+
                 default:
                     System.out.println("Invalid choice!");
             }
-        }while (ch!=3);
+        }while (ch!=4);
+
+
     }
 
     private static void bookTicket(Scanner sc)
@@ -93,9 +101,15 @@ public class Exe_057_FlightBooking {
 
         return journeyDate;
     }
+
+    private static void TicketBilling()
+    {
+        System.out.println("For "+flightBooking.getNumOfAdult()+" Adults and "+flightBooking.getNumOfChild()+" child bill is== " );
+        flightBooking.billing();
+    }
 }
 
-class flightBooking
+class flightBooking implements TicketBilling.Billing
 {
     String journeyDate;
     int NumOfAdult;
@@ -140,5 +154,14 @@ class flightBooking
         System.out.println("Your Journey Date is== "+journeyDate);
         System.out.println("You have booked Tickets for "+NumOfAdult+" Adults");
         System.out.println("You have booked Tickets for "+NumOfChild+" Childs");
+        System.out.print("Your Bill is -- ");
+        billing();
+    }
+
+
+    @Override
+    public void billing() {
+        int billingPrice=(NumOfAdult*100)+(NumOfChild*50);
+        System.out.println(billingPrice);
     }
 }
